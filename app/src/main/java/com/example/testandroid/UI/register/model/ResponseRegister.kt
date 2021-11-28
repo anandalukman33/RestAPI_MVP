@@ -7,6 +7,6 @@ data class ResponseRegister(
 	@field:SerializedName("message")
 	val message: String? = null,
 
-	@field:SerializedName("isSuccess")
+	@field:SerializedName("isSuccess")	
 	val isSuccess: Boolean? = null
 )
