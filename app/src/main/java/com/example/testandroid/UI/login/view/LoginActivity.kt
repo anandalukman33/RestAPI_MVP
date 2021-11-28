@@ -1,41 +1,78 @@
 package com.example.testandroid.UI.login.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import com.example.testandroid.MainActivity
 import com.example.testandroid.R
+import com.example.testandroid.UI.login.model.DataItem
+import com.example.testandroid.UI.login.presenter.LoginPresenter
+import com.example.testandroid.UI.login.presenter.LoginView
+import com.example.testandroid.UI.register.view.RegisterActivity
 import com.example.testandroid.data.UserData
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), LoginView {
 
-    private var tvName: TextView? = null
-    private var tvEmail: TextView? = null
-    private var tvPassword: TextView? = null
-    private var tvPhone: TextView? = null
+    private var edEmail: EditText? = null
+    private var edPassword: EditText? = null
 
-    private var name: String? = null
-    private var email: String? = null
-    private var password: String? = null
-    private var phone: String? = null
+    private var btnLogin: Button? = null
+    private var linkRegister: TextView? = null
+
+    /*
+    ** Percobaan intent data
+     */
+//    private var name: String? = null
+//    private var email: String? = null
+//    private var password: String? = null
+//    private var phone: String? = null
+
+    private var loginPresenter: LoginPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        tvName = findViewById(R.id.tv_name)
-        tvEmail = findViewById(R.id.tv_email)
-        tvPassword = findViewById(R.id.tv_password)
-        tvPhone = findViewById(R.id.tv_hp)
+        edEmail = findViewById(R.id.ed_email_login)
+        edPassword = findViewById(R.id.ed_password_login)
 
-        name =  intent.getStringExtra(UserData.NAME)
-        email = intent.getStringExtra(UserData.EMAIL)
-        password = intent.getStringExtra(UserData.PASSWORD)
-        phone = intent.getStringExtra(UserData.PHONE)
+        btnLogin = findViewById(R.id.btn_login)
+        linkRegister = findViewById(R.id.register_click)
 
-        tvName?.text = name
-        tvEmail?.text = email
-        tvPassword?.text = password
-        tvPhone?.text = phone
+        // onClick Link Register
+        linkRegister?.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
 
+        // btn onClick Login
+        btnLogin?.setOnClickListener {
+            val email = edEmail?.text.toString()
+            val password = edPassword?.text.toString()
+            loginPresenter?.login(email, password)
+        }
+
+        /*
+        ** Percobaan intent data
+         */
+//        name =  intent.getStringExtra(UserData.NAME)
+//        email = intent.getStringExtra(UserData.EMAIL)
+//        password = intent.getStringExtra(UserData.PASSWORD)
+//        phone = intent.getStringExtra(UserData.PHONE)
+
+
+        loginPresenter = LoginPresenter(this)
+
+    }
+
+    override fun loginSuccess(msg: String, user: List<DataItem?>) {
+        startActivity(Intent(this, MainActivity::class.java))
+    }
+
+    override fun errorLogin(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 }

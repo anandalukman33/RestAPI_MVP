@@ -59,10 +59,13 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
     override fun successRegister(response: ResponseRegister) {
         val intent = Intent(this, LoginActivity::class.java)
-        intent.putExtra(UserData.NAME, etNama?.text.toString())
-        intent.putExtra(UserData.EMAIL, etEmail?.text.toString())
-        intent.putExtra(UserData.PASSWORD, etPassword?.text.toString())
-        intent.putExtra(UserData.PHONE, etNoHp?.text.toString())
+        /*
+        ** Percobaan intent
+         */
+//        intent.putExtra(UserData.NAME, etNama?.text.toString())
+//        intent.putExtra(UserData.EMAIL, etEmail?.text.toString())
+//        intent.putExtra(UserData.PASSWORD, etPassword?.text.toString())
+//        intent.putExtra(UserData.PHONE, etNoHp?.text.toString())
         startActivity(intent)
         finish()
     }

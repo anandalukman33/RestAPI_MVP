@@ -8,38 +8,68 @@
         android:padding="20dp"
         tools:context=".UI.login.view.LoginActivity">
 
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="50dp"
+            android:layout_centerInParent="true"
             android:padding="10dp">
 
+        <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/logo_login"
+                android:layout_marginBottom="30dp"
+                android:tooltipText="login yokai"
+                android:layout_gravity="center"/>
 
-        <TextView
-                android:id="@+id/tv_name"
+
+        <EditText
+                android:id="@+id/ed_email_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nama"/>
+                android:hint="Masukkan Email"/>
 
-        <TextView
-                android:id="@+id/tv_email"
+        <EditText
+                android:id="@+id/ed_password_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"/>
+                android:inputType="textPassword"
+                android:hint="Masukan Password"/>
 
-        <TextView
-                android:id="@+id/tv_password"
+        <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"/>
+                android:text="LOGIN"/>
 
-        <TextView
-                android:id="@+id/tv_hp"
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="Nomor HP"/>
+                android:gravity="center">
+
+            <TextView
+                    android:id="@+id/belumpunya"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun?"/>
+
+            <TextView
+                    android:id="@+id/register_click"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="klik disini"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/belumpunya"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textStyle="bold"/>
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 

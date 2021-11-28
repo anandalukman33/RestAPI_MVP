@@ -12,13 +12,13 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.TestAndroid">
         <activity android:name=".UI.register.view.RegisterActivity">
+        </activity>
+        <activity android:name=".UI.login.view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".UI.login.view.LoginActivity">
         </activity>
         <activity android:name=".MainActivity">
         </activity>

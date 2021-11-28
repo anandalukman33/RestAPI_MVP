@@ -1,5 +1,6 @@
 package com.example.testandroid.network
 
+import com.example.testandroid.UI.login.model.ResponseLogin
 import com.example.testandroid.UI.register.model.ResponseRegister
 import retrofit2.Call
 import retrofit2.http.Field
@@ -18,4 +19,13 @@ interface UserService {
         @Field("password") password : String
 
     ): Call<ResponseRegister>
+
+    @FormUrlEncoded
+    @POST("Login.php")
+
+    fun login(
+        @Field("email") email : String,
+        @Field("password") password : String
+
+    ): Call<ResponseLogin>
 }
