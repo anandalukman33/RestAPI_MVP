@@ -13,12 +13,16 @@
             android:id="@+id/ed_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:backgroundTint = "@color/red"
+            android:textColorHighlight = "@color/red"
             android:hint="Nama"/>
 
     <EditText
             android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:backgroundTint = "@color/red"
+            android:textColorHighlight = "@color/red"
             android:hint="Email"/>
 
     <EditText
@@ -26,6 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            app:backgroundTint = "@color/red"
+            android:textColorHighlight = "@color/red"
             android:hint="Password"/>
 
     <EditText
@@ -33,6 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            app:backgroundTint = "@color/red"
+            android:textColorHighlight = "@color/red"
             android:hint="Ketik Ulang Password"/>
 
     <EditText
@@ -40,12 +48,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            app:backgroundTint = "@color/red"
+            android:textColorHighlight = "@color/red"
             android:hint="Nomor HP"/>
 
     <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:backgroundTint = "@color/red"
             android:text="REGISTER"/>
 
 

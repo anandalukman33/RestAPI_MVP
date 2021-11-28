@@ -30,6 +30,8 @@
                 android:id="@+id/ed_email_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:backgroundTint = "@color/red"
+                android:textColorHighlight = "@color/red"
                 android:hint="Masukkan Email"/>
 
         <EditText
@@ -37,12 +39,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                app:backgroundTint = "@color/red"
+                android:textColorHighlight = "@color/red"
                 android:hint="Masukan Password"/>
 
         <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:backgroundTint = "@color/red"
                 android:text="LOGIN"/>
 
         <RelativeLayout
@@ -65,7 +70,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="8dp"
                     android:layout_toEndOf="@+id/belumpunya"
-                    android:textColor="@android:color/holo_blue_light"
+                    android:textColor="@color/red"
                     android:textStyle="bold"/>
 
         </RelativeLayout>

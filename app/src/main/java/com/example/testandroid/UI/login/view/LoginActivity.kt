@@ -14,6 +14,7 @@ import com.example.testandroid.UI.login.presenter.LoginPresenter
 import com.example.testandroid.UI.login.presenter.LoginView
 import com.example.testandroid.UI.register.view.RegisterActivity
 import com.example.testandroid.data.UserData
+import com.example.testandroid.helper.SessionManager
 
 class LoginActivity : AppCompatActivity(), LoginView {
 
@@ -69,6 +70,13 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun loginSuccess(msg: String, user: List<DataItem?>) {
+        val session = SessionManager(this)
+        session.email = user[0]?.userEmail
+        session.nama = user[0]?.userNama
+        session.hp = user[0]?.userHp
+
+        session.login = true
+
         startActivity(Intent(this, MainActivity::class.java))
     }
 
