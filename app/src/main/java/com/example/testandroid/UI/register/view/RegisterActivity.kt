@@ -6,13 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.testandroid.R
-import com.example.testandroid.UI.login.LoginActivity
+import com.example.testandroid.UI.login.view.LoginActivity
 import com.example.testandroid.UI.register.model.ResponseRegister
 import com.example.testandroid.UI.register.presenter.RegisterPresenter
 import com.example.testandroid.UI.register.presenter.RegisterView
+import com.example.testandroid.data.UserData
 
 class RegisterActivity : AppCompatActivity(), RegisterView {
 
@@ -58,7 +58,13 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
     }
 
     override fun successRegister(response: ResponseRegister) {
-        startActivity(Intent(this, LoginActivity::class.java))
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.putExtra(UserData.NAME, etNama?.text.toString())
+        intent.putExtra(UserData.EMAIL, etEmail?.text.toString())
+        intent.putExtra(UserData.PASSWORD, etPassword?.text.toString())
+        intent.putExtra(UserData.PHONE, etNoHp?.text.toString())
+        startActivity(intent)
+        finish()
     }
 
     override fun errorRegister(msg: String) {

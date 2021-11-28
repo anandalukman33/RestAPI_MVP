@@ -7,7 +7,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RegisterPresenter(val registerView: RegisterView) {
-
+ 
     fun register(nama: String, hp: String, email: String, password: String, passConf: String) {
         registerView.showProgress()
 
