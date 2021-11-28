@@ -15,7 +15,10 @@ class RegisterPresenter(val registerView: RegisterView) {
             if (password != passConf) {
                 registerView.noMatch()
 
-            } else {
+            } else if (password.length < 7) {
+                registerView.errorRegister("password kependekan euy, minimal 7 karakter, ntar dihack loh...")
+            }
+            else {
                 ConfigNetwork.getNetwork().register(nama, hp, email, password)
                     .enqueue(object : Callback<ResponseRegister> {
                         override fun onResponse(call: Call<ResponseRegister>, response: Response<ResponseRegister>) {
