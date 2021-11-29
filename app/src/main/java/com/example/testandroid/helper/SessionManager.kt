@@ -29,17 +29,25 @@ class SessionManager(var context: Context) {
         get() = pref?.getString(NAME, "")
         set(nama) {
             editor?.putString(NAME, nama)
+            editor?.commit()
         }
 
     var email: String?
         get() = pref?.getString(EMAIL, "")
         set(email) {
             editor?.putString(EMAIL, email)
+            editor?.commit()
         }
 
     var hp: String?
         get() = pref?.getString(HP, "")
         set(hp) {
             editor?.putString(HP, hp)
+            editor?.commit()
         }
+
+    fun logOut() {
+        editor?.clear()
+        editor?.commit()
+    }
 }

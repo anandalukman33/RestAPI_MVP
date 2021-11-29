@@ -8,7 +8,7 @@ class ConfigNetwork {
     companion object {
         fun getNetwork(): UserService {
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.1.3/mentoringkotlin/")
+                .baseUrl("http://10.10.10.53/mentoringkotlin/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
